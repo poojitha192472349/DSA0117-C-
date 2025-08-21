@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Book {
+private:
+    string title;
+    double price;
+
+public:
+    
+    Book() {
+        title = "";
+        price = 0.0;
+    }
+
+    
+    Book(string t, double p) {
+        title = t;
+        price = p;
+    }
+
+    Book(const Book &b) {
+        title = b.title;
+        price = b.price;
+    }
+
+  
+    void display() {
+        cout << "Title: " << title << endl;
+        cout << "Price: $" << price << endl;
+    }
+};
+
+int main() {
+  
+    Book book1("C++ Programming", 49.99);
+
+    Book book2 = book1;
+
+    
+    cout << "Book 1 details:" << endl;
+    book1.display();
+
+    cout << "\nBook 2 (copied) details:" << endl;
+    book2.display();
+
+    return 0;
+}
