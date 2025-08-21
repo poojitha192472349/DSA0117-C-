@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    int rollNo;
+    double marks;
+
+public:
+    
+    Student(int r, double m) {
+        rollNo = r;
+        marks = m;
+    }
+
+    
+    void display() {
+        cout << "Roll No: " << rollNo << ", Marks: " << marks << endl;
+    }
+};
+
+int main() {
+    
+    Student students[] = {
+        Student(1, 85.5),
+        Student(2, 90.0),
+        Student(3, 78.2)
+    };
+
+    int n = sizeof(students) / sizeof(students[0]);
+
+    
+    for (int i = 0; i < n; i++) {
+        students[i].display();
+    }
+
+    return 0;
+}
