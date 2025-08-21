@@ -1,0 +1,76 @@
+#include <iostream>
+using namespace std;
+
+
+class Rectangle {
+private:
+    double length;
+    double breadth;
+
+public:
+    
+    Rectangle(double a, double b) {
+        length = a;
+        breadth = b;
+    }
+
+  
+    void area() {
+        cout << "Rectangle Area: " << length * breadth << endl;
+    }
+};
+
+class Box {
+private:
+    double length;
+    double width;
+    double height;
+
+public:
+    
+    Box() {
+        length = width = height = 1;
+    }
+
+    
+    Box(double side) {
+        length = width = height = side;
+    }
+
+    
+    Box(double l, double w, double h) {
+        length = l;
+        width = w;
+        height = h;
+    }
+
+    
+    void display() {
+        cout << "Box Dimensions: " << length << " x " << width << " x " << height << endl;
+        cout << "Volume: " << length * width * height << endl;
+    }
+};
+
+
+int main() {
+    // Rectangle example
+    Rectangle r(5.0, 3.0);
+    r.area();
+
+    cout << endl;
+
+    Box b1;                
+    Box b2(4);             
+    Box b3(3, 4, 5);        
+
+    cout << "Box 1 (Default):" << endl;
+    b1.display();
+
+    cout << "\nBox 2 (Cube):" << endl;
+    b2.display();
+
+    cout << "\nBox 3 (Custom):" << endl;
+    b3.display();
+
+    return 0;
+}
